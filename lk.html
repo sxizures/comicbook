@@ -1,0 +1,333 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- fancyBox CSS -->
+    <link href="/examples/vendors/fancybox/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css\home.css">
+    <title>Личный кабинет</title>
+    <style>
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        #profile {
+            text-align: justify;
+            margin: 40px;
+        }
+
+            #profile img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 2px solid #333;
+            }
+
+        #personal-info {
+            margin-top: 10px;
+        }
+
+            #personal-info ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                #personal-info ul li {
+                    margin-bottom: 10px;
+                }
+
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+
+            nav a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: justify;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                nav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+        #favorites {
+            text-align: left;
+            margin: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-top: 20px;
+        }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        button {
+            background-color: #00bfff;
+            border-radius: 4px;
+            color: white;
+            padding: 10px 18px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+        }
+
+
+        label {
+            margin-bottom: 15px;
+        }
+
+        input {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="nav-link" href="Курсовая.html" style="color: #ffa500; font-size: x-large; font-style: italic;">ComicBook</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a style="color:black" class="nav-link" href="lk.html">Личный кабинет</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color:black" class="nav-link" href="korzina\korzina.html">Корзина</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color:black" class="nav-link" href="Category\Catalog.html">Каталог</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<body>
+
+
+
+
+
+
+    <div align="center">
+        <img style="border: thick double #32a1ce;margin-top:17px" src="https://i.pinimg.com/564x/d8/ca/89/d8ca892b4d78d4c9bdcf768ef1f4a917.jpg" width="200" height="200">
+
+    </div>
+
+
+    <div id="personal-info">
+        <h2 style="color:black" align="center">Личные данные</h2>
+        <form id="personal-info-form">
+            <div align="center">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" ><br>
+            </div>
+            <div align="center">
+                <label for="email">Email:</label>
+                <input type="email" id="email" ><br>
+            </div>
+            <div align="center">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" ><br>
+            </div>
+            <button align="center" type="submit">Сохранить изменения</button>
+        </form>
+    </div>
+
+
+    <script>
+        document.getElementById('personal-info-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Предотвращает отправку формы по умолчанию
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            // Отправка данных на сервер для сохранения (можно использовать AJAX запрос)
+
+            alert('Изменения сохранены');
+        });
+    </script>
+
+
+
+    <details class="h4" style="color:aliceblue">
+        <summary>Избранное</summary>
+        <ul class="h4" style="font-size:17px; color:black">
+            <h4 align="center">Избранные товары  </h4>
+            <h5 align="center" style="color:orange">**нет в наличии </h5>
+            <br>
+
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <p><img src="https://cdn.img-gorod.ru/310x500/nomenclature/30/015/3001587-3.jpg" alt="Фотография 1" width="200" height="250" class="leftimg">Человек-бензопила. Книга 9.  </p>
+
+
+
+                    </div>
+
+                    <div class="col">
+                        <p><img src="https://cdn.img-gorod.ru/310x500/nomenclature/29/789/2978981.jpg" alt="Фотография 1" width="200" height="250" class="leftimg">Человек-бензопила. Книга 8. Спойлер </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p><img src="https://cdn.img-gorod.ru/310x500/nomenclature/29/712/2971238.jpg" alt="Фотография 1" width="200" height="250" class="leftimg">Человек-бензопила 7. Книга 12. Птица и война</p>
+
+
+                    </div>
+
+                    <div class="col">
+                        <p><img src="https://cdn.img-gorod.ru/310x500/nomenclature/29/448/2944827.jpg" alt="Фотография 1" width="200" height="250" class="leftimg">Человек-бензопила. Книга 6.  </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p><img src="https://cdn.img-gorod.ru/310x500/nomenclature/29/391/2939182.jpg" alt="Фотография 1" width="200" height="250" class="leftimg">Человек-бензопила. Книга 5. Купание в ванне.  </p>
+
+
+                    </div>
+
+                    <div class="col">
+                        <p><img src="https://cdn.img-gorod.ru/310x500/nomenclature/29/121/2912150.jpg" alt="Фотография 1" width="200" height="250" class="leftimg">Человек-бензопила. Книга 4. Во сне. </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p><img src="https://cdn.img-gorod.ru/310x500/nomenclature/28/971/2897150.jpg" alt="Фотография 1" width="200" height="250" class="leftimg">Человек-бензопила. Книга 3. Несовершеннолетний.  </p>
+
+
+                    </div>
+
+                    <div class="col">
+                        <p><img src="https://cdn.img-gorod.ru/310x500/nomenclature/28/837/2883782.jpg" alt="Фотография 1" width="200" height="250" class="leftimg">Человек-бензопила. Книга 2. Убить Дэндзи. </p>
+
+                    </div>
+
+                </div>
+        </ul>
+    </details>
+
+    <details class="h4" style="color:aliceblue">
+        <summary>Закладки</summary>
+        <ul class="h4" style="font-size:17px; color:black">
+            <li>
+                <div class="col">
+                    <a data-fancybox="gallery" href="https://cdn.img-gorod.ru/310x500/nomenclature/27/155/2715542.jpg">
+                        <img class="thumb" src="https://cdn.img-gorod.ru/310x500/nomenclature/27/155/2715542.jpg" alt="121" width="200" height="250">
+                    </a>
+                    <p class="lead">Sailor Moon. Pretty Guardian. Том 2.</p>
+                    <p class="lead"><strong>599 ₽</strong></p>
+                    <div align="left">
+                        <form action="romantic\Наоко Такэути\СМУН2.html">
+                            <input type="submit" value="Купить" class="btn btn-primary btn-lg">
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="col">
+                    <a data-fancybox="gallery" href="https://xlm.ru/storage/uploads/products/166/2019/07/31/208WREE0ZboJ2nh42zIqCUKGOG51r0WaId0GRu3O.jpeg">
+                        <img class="thumb" src="https://xlm.ru/storage/uploads/products/166/2019/07/31/208WREE0ZboJ2nh42zIqCUKGOG51r0WaId0GRu3O.jpeg" alt="121" width="200" height="250">
+                    </a>
+                    <p class="lead">Очень приятно, бог. Том 1.</p>
+                    <p class="lead"><strong>599 ₽</strong></p>
+                    <div align="left">
+                        <form action="romantic\Джульетта Судзуки\ОПБ1.html">
+                            <input type="submit" value="Купить" class="btn btn-primary btn-lg">
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="col">
+                    <a data-fancybox="gallery" href="https://cdn.img-gorod.ru/310x500/nomenclature/27/335/2733585.jpg">
+                        <img class="thumb" src="https://cdn.img-gorod.ru/310x500/nomenclature/27/335/2733585.jpg" alt="21" width="200" height="250">
+                    </a>
+                    <p class="lead">Sailor Moon. Прекрасный воин Сейлор Мун. Том 3</p>
+                    <p class="lead"><strong>599 ₽</strong></p>
+                    <div align="left">
+                        <form action="romantic\Наоко Такэути\СМУН3.html">
+                            <input type="submit" value="Купить" class="btn btn-primary btn-lg">
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </details>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+

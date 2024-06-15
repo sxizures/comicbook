@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .profile, .comics {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        .comic-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .comic {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+            .comic img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .comic h3 {
+                margin-bottom: 5px;
+            }
+
+            .comic p {
+                font-size: 14px;
+                color: #666;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Личный кабинет</h1>
+        
+        <div class="comics">
+            <h2>Мои комиксы</h2>
+            <form>
+                <label for="comicName">Название комикса:</label>
+                <input type="text" id="comicName" name="comicName" required>
+                <label for="comicDescription">Описание:</label>
+                <textarea id="comicDescription" name="comicDescription" required></textarea>
+                <label for="comicFile">Загрузить файл:</label>
+                <input type="file" id="comicFile" name="comicFile">
+                <button type="submit">Добавить</button>
+                <button onclick="openModalByTitle('Человек-бензопила')">Открыть комикс</button>
+            </form>
+            <div class="comic-list">
+                <!-- Здесь будет отображаться список комиксов -->
+            </div>
+        </div>
+    </div>
+    <script>
+     function openModalByTitle(title) {
+    // Проверяем, есть ли комикс с указанным названием
+    var comics = JSON.parse(localStorage.getItem('comics')) || [];
+    var comic = comics.find(function(comic) {
+        return comic.name === title;
+    });
+
+    if (comic) {
+        // Открываем модальное окно
+        openModal(comic.images)= ["https://cdn.img-gorod.ru/0x1200/nomenclature/28/694/2869449_1.jpg", "https://cdn.img-gorod.ru/0x1200/nomenclature/28/694/2869449_2.jpg", "https://cdn.img-gorod.ru/0x1200/nomenclature/28/694/2869449_3.jpg"];
+    } else {
+        alert('Человек-бензопила"' + Человек-бензопила + '" не найден.');
+    }
+}
+    </script>
+</body>
+</html>
